@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>stock</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="js/swiper/swiper.min.css"/>
+    <link rel="stylesheet" href="css/public.css">
+
+
+
+</head>
+
+<body class="bgc_gray">
+
+<div class="pg-main">
+
+    <div id="wrapper">
+        <!--header end-->
+        <div class="wrap">
+            <div class="tabs">
+                <span class="part active"><a href="#" hidefocus="true">视频版</a></span>
+                <span class="part"><a href="#" hidefocus="true">漫画版</a></span>
+                <span class="part"><a href="#" hidefocus="true">直播版</a></span>
+            </div>
+
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide swiper-slide-visible swiper-slide-active">
+                        <div class="content-slide">
+                            <img src="images/u=2105863195,1320334768&fm=26&gp=0.jpg" alt="">
+                            <img src="images/u=732322503,1369275504&fm=26&gp=0.jpg
+" alt="">
+                            <img src="images/u=2816812349,548406637&fm=26&gp=0.jpg" alt="">
+                            <img src="images/u=2816812349,548406637&fm=26&gp=0.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="content-slide">
+                            <img src="images/u=2105863195,1320334768&fm=26&gp=0.jpg" alt="">
+                            <img src="images/u=732322503,1369275504&fm=26&gp=0.jpg
+" alt="">
+                            <img src="images/u=2816812349,548406637&fm=26&gp=0.jpg" alt="">
+                            <img src="images/u=2816812349,548406637&fm=26&gp=0.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="content-slide">
+                            <img src="images/u=2105863195,1320334768&fm=26&gp=0.jpg" alt="">
+                            <img src="images/u=732322503,1369275504&fm=26&gp=0.jpg
+" alt="">
+                            <img src="images/u=2816812349,548406637&fm=26&gp=0.jpg" alt="">
+                            <img src="images/u=2816812349,548406637&fm=26&gp=0.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/swiper/idangerous.swiper.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        var tabsSwiper;
+        tabsSwiper = new Swiper('.swiper-container', {
+            speed: 500,
+            onSlideChangeStart: function () {
+                $(".tabs .active").removeClass('active');
+                $(".tabs span").eq(tabsSwiper.activeIndex).addClass('active');
+            }
+        });
+
+        $(".tabs span").on('touchstart mousedown', function (e) {
+            e.preventDefault()
+            $(".tabs .active").removeClass('active');
+            $(this).addClass('active');
+            tabsSwiper.swipeTo($(this).index());
+
+        });
+
+        $(".tabs span").click(function (e) {
+            e.preventDefault();
+        });
+
+
+    });//end
+</script>
+
+</body>
+
+</html>
